@@ -7,30 +7,54 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+## [1.0.0] - 2025-09-07
+
+### Transformación de arquitectura: SPA → Sistema Multi-página
+
 ### Agregado
-- Landing page navegable con mapa de procesos de desarrollo de software
-- Sistema de navegación SPA (Single Page Application) con JavaScript vanilla
-- Vista de detalle de procesos con información estructurada
-- Diseño responsivo con CSS Grid y variables CSS personalizadas
-- Navegación por teclado (tecla 'H' para volver al inicio)
-- 8 procesos organizados en 3 categorías:
-  - **Procesos de Proyecto**: Planificación y Control de Proyectos
-  - **Procesos de Producto**: Desarrollo de Requerimientos, Solución Técnica, Integración del Producto, Verificación y Validación
-  - **Procesos de Soporte**: Administración de la Configuración, Administración de Modificaciones y Problemas, Gestión de Riesgos
+- **Sistema de navegación multi-página** reemplazando la arquitectura SPA
+- **8 páginas individuales de procesos** con URLs dedicadas en `/procesos/*/`
+  - `planificacion/` - Planificación y Control de Proyectos
+  - `requerimientos/` - Desarrollo de Requerimientos  
+  - `solucion/` - Solución Técnica
+  - `integracion/` - Integración del Producto
+  - `vv/` - Verificación y Validación
+  - `configuracion/` - Administración de la Configuración
+  - `modificaciones/` - Administración de Modificaciones y Problemas
+  - `riesgos/` - Gestión de Riesgos
+- **Sistema de matriz de configuración** con soporte para datos complejos
+- **Funcionalidades interactivas especializadas** por proceso
+- **Estilos adicionales** para componentes específicos (`cm-extra.css`)
 
-### Características técnicas
-- Estructura de datos JSON para procesos con título, tipo, descripción, acciones y artefactos
-- Event delegation para manejo eficiente de eventos de navegación
-- Diseño visual inspirado en metodologías de desarrollo ágil
+### Cambiado
+- **Arquitectura**: De SPA interactiva a navegación web tradicional multi-página
+- **JavaScript**: Reestructuración de `app.js` → `procesos-data.js` + `proceso.js`
+- **CSS**: Optimización y consolidación de reglas de layout
+- **Landing page**: Simplificada de vista interactiva a página estática con enlaces
+- **Navegación**: Enlaces directos en lugar de navegación por JavaScript
+
+### Mejorado
+- **SEO**: URLs individuales para cada proceso mejoran indexación
+- **Rendimiento**: Carga específica por página en lugar de SPA completa
+- **Accesibilidad**: Navegación web estándar más accesible
+- **Experiencia de usuario**: URLs compartibles y navegación intuitiva
+
+### Características técnicas v1.0.0
+- Navegación web tradicional con páginas dedicadas
+- Datos centralizados de procesos en JSON
+- Sistema modular de JavaScript por funcionalidad
+- Layout responsivo con CSS Grid optimizado
+- Soporte para matrices de configuración complejas
 - Colores temáticos diferenciados por tipo de proceso
-- Layout adaptativo para dispositivos móviles
 
-### Archivos principales
-- `index.html`: Punto de entrada con estructura HTML semántica
-- `assets/css/styles.css`: Estilos con variables CSS y diseño responsivo
-- `assets/js/app.js`: Lógica de navegación y datos de procesos
-- `.nojekyll`: Configuración para GitHub Pages
-- `.gitignore`: Exclusiones para control de versiones
+### Archivos principales v1.0.0
+- `index.html`: Landing page estática con enlaces a procesos
+- `assets/css/styles.css`: Estilos optimizados y consolidados
+- `assets/css/cm-extra.css`: Estilos adicionales para componentes especializados
+- `assets/js/procesos-data.js`: Datos centralizados de procesos
+- `assets/js/proceso.js`: Lógica para páginas individuales de procesos
+- `assets/js/cm.js` y `cm-matriz.json`: Sistema de matriz de configuración
+- `procesos/*/index.html`: 8 páginas individuales de procesos
 
 ## [Inicial] - 2025-09-07
 
