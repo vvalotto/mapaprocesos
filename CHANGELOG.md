@@ -7,6 +7,39 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-09-07
+
+### Mejoras significativas en UX y funcionalidad
+
+### Corregido
+- **Navegación 404**: Corregidos enlaces de navegación en todas las páginas de procesos
+  - Reparado JavaScript con rutas incorrectas (`'..'` → `'../../'`)
+  - Convertidos botones inconsistentes a enlaces estándar `<a href="../../">`
+  - Eliminada ruta malformada `../el../` en página de configuración
+- **Estructura visual**: Matriz CM reorganizada con cláusulas al mismo nivel
+  - Cambio de layout 2 columnas → 3 columnas para cláusulas 8.1.1, 8.1.2, 8.1.3
+  - Artefactos separados como sección no seleccionable
+  - Responsive design mejorado (3→2→1 columnas)
+
+### Agregado
+- **Enlaces a GPTs especializados** en matriz de Administración de la Configuración:
+  - 8.1.1: GPT para Listado de Elementos de Configuración
+  - 8.1.2: GPT para Inventario de SOUP
+  - Botones `🤖 Asistente GPT` con diseño premium y gradientes
+- **Diseño visual premium** para matriz CM:
+  - Tabs con gradientes dinámicos y efectos hover 3D
+  - Cards con bordes superiores coloridos y animaciones
+  - Lista de acciones con checkmarks y hover interactivo
+  - Sección de artefactos con diseño diferenciado (borde dashed, fondo degradado)
+  - Paleta de colores vibrante con variables CSS personalizadas
+
+### Mejorado
+- **Experiencia de usuario**: Navegación consistente y confiable en todas las páginas
+- **Accesibilidad**: Enlaces estándar web en lugar de dependencias JavaScript
+- **Diseño visual**: Sistema de colores moderno con gradientes y animaciones suaves
+- **Organización**: Separación clara entre cláusulas normativas y artefactos de salida
+- **Funcionalidad**: Integración directa con herramientas de IA especializadas
+
 ## [1.0.0] - 2025-09-07
 
 ### Transformación de arquitectura: SPA → Sistema Multi-página

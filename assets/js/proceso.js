@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
   render(data);
   // botón Home
   const btnHome = document.getElementById('btnHome');
-  if(btnHome) btnHome.addEventListener('click', ()=> window.location.href = '..' );
+  if(btnHome) btnHome.addEventListener('click', ()=> window.location.href = '../../' );
   const backLink = document.getElementById('backLink');
   if(backLink) backLink.addEventListener('click', (e)=>{ e.preventDefault(); window.location.href='../../'; });
 });
