@@ -1,5 +1,5 @@
-// --- Datos de procesos ---
-const PROCESOS = {
+// Datos compartidos de procesos
+export const PROCESOS = {
   planificacion: {
     titulo: "Planificación y Control de Proyectos",
     tipo: "Proceso de Proyecto",
@@ -67,39 +67,3 @@ const PROCESOS = {
     artefactos: ["Risk Register","Heatmap","Planes de mitigación","Informe de seguimiento"]
   }
 };
-
-// --- Utilidades SPA ---
-const $ = (sel)=>document.querySelector(sel);
-const show = (id)=>{
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  $(id).classList.add('active');
-  window.scrollTo({top:0,behavior:'instant'});
-};
-
-function renderProceso(id){
-  const p = PROCESOS[id];
-  if(!p) return;
-  $('#procTitulo').textContent = p.titulo;
-  $('#procTipo').textContent = p.tipo;
-  $('#procDescripcion').textContent = p.descripcion;
-  $('#procAcciones').innerHTML = p.acciones.map(a=>`<li>${a}</li>`).join('');
-  $('#procArtefactos').innerHTML = p.artefactos.map(a=>`<li>${a}</li>`).join('');
-  // Acciones de ejemplo
-  $('#btnAbrirGuia').onclick = ()=>window.open('#', '_blank');
-  $('#btnAbrirFlujo').onclick = ()=>window.open('#', '_blank');
-  show('#detalle');
-}
-
-// Delegación de eventos: clic en cualquier .tile-link
-document.addEventListener('click', (e)=>{
-  const el = e.target.closest('.tile-link');
-  if(!el) return;
-  e.preventDefault();
-  const id = el.dataset.id;
-  renderProceso(id);
-});
-
-// Controles de volver a home
-$('#btnHome').onclick = ()=>show('#landing');
-$('#backLink').onclick = (e)=>{e.preventDefault();show('#landing')};
-document.addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='h') show('#landing') });

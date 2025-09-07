@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Proyecto de Desarrollo — Mapa de Procesos</title>
+  <title>Marco de Procesos — Landing</title>
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
@@ -11,75 +11,48 @@
     <div class="top">
       <div>
         <div class="title">Área I+D+i / Software (SW): Marco de Procesos</div>
-        <div class="subtitle">Landing con navegación por procesos — prototipo estático (HTML/CSS/JS)</div>
+        <div class="subtitle">Landing con navegación por procesos — multi‑página</div>
       </div>
-      <button class="btn" id="btnHome" title="Volver a la landing (tecla H)">🏠 <span>Landing</span></button>
+      <a class="btn" href="./">🏠 <span>Landing</span></a>
     </div>
 
-    <!-- VISTA LANDING -->
-    <section id="landing" class="view active">
-      <div class="landing" aria-label="Mapa de procesos">
-        <div class="side left">Necesidades<br/>del Cliente</div>
-        <div class="header">Proyecto de Desarrollo</div>
-        
-        <div class="section proj">
-          <h3>Procesos de Proyecto</h3>
-          <div class="band band-lavender">
-            <a href="#" class="tile-link" data-id="planificacion">PLANIFICACIÓN Y CONTROL DE PROYECTOS</a>
-          </div>
-        </div>
+    <section class="landing">
+      <div class="side left">Necesidades<br/>del Cliente</div>
+      <div class="header">Proyecto de Desarrollo</div>
 
-        <div class="section prod1">
-          <h3>Procesos de Producto</h3>
-          <div class="grid">
-            <div class="tile tile-link" data-id="requerimientos" data-color="orange">DESARROLLO DE REQUERIMIENTOS</div>
-            <div class="tile tile-link" data-id="solucion" data-color="orange">SOLUCIÓN TÉCNICA</div>
-            <div class="tile tile-link" data-id="integracion" data-color="orange">INTEGRACIÓN DEL PRODUCTO</div>
-          </div>
+      <div class="section proj">
+        <h3>Procesos de Proyecto</h3>
+        <div class="band">
+          <a href="procesos/planificacion/">PLANIFICACIÓN Y CONTROL DE PROYECTOS</a>
         </div>
-
-        <div class="section prod2">
-          <div class="grid">
-            <div class="tile vv tile-link" data-id="vv">VERIFICACIÓN Y VALIDACIÓN</div>
-          </div>
-        </div>
-
-        <div class="section supp1">
-          <h3>Procesos de Soporte</h3>
-          <div class="grid">
-            <div class="tile tile-link" data-id="configuracion" data-color="pink">ADMINISTRACIÓN DE LA CONFIGURACIÓN DE SOFTWARE</div>
-            <div class="tile tile-link" data-id="modificaciones" data-color="butter">ADMINISTRACIÓN DE MODIFICACIONES Y PROBLEMAS</div>
-            <div class="tile tile-link" data-id="riesgos" data-color="violet">GESTIÓN DE RIESGOS</div>
-          </div>
-        </div>
-
-        <div class="side right">Cierre del Proyecto:<br/>Necesidades del Cliente<br/>Satisfechas</div>
       </div>
-    </section>
 
-    <!-- VISTA DETALLE -->
-    <section id="detalle" class="view">
-      <div class="detail">
-        <div class="crumbs"><a href="#" id="backLink">◀ Volver</a> · <span id="procTipo"></span></div>
-        <h1 class="proc-title" id="procTitulo">Título del proceso</h1>
-        <p id="procDescripcion">Descripción breve del proceso seleccionado.</p>
-
-        <h3>Acciones típicas</h3>
-        <ul id="procAcciones"></ul>
-
-        <h3>Artefactos / Evidencias</h3>
-        <ul id="procArtefactos"></ul>
-
-        <div style="margin-top:18px">
-          <button class="btn" id="btnAbrirGuia">📄 Ver guía (plantilla)</button>
-          <button class="btn" id="btnAbrirFlujo">🗺️ Ver flujo (diagrama)</button>
+      <div class="section prod1">
+        <h3>Procesos de Producto</h3>
+        <div class="grid">
+          <a class="tile" data-color="orange" href="procesos/requerimientos/">DESARROLLO DE REQUERIMIENTOS</a>
+          <a class="tile" data-color="orange" href="procesos/solucion/">SOLUCIÓN TÉCNICA</a>
+          <a class="tile" data-color="orange" href="procesos/integracion/">INTEGRACIÓN DEL PRODUCTO</a>
         </div>
-
-        <p class="hint">Tip: presioná <span class="kbd">H</span> para volver a la landing.</p>
       </div>
+
+      <div class="section prod2">
+        <div class="grid">
+          <a class="tile vv" href="procesos/vv/">VERIFICACIÓN Y VALIDACIÓN</a>
+        </div>
+      </div>
+
+      <div class="section supp1">
+        <h3>Procesos de Soporte</h3>
+        <div class="grid">
+          <a class="tile" data-color="pink" href="procesos/configuracion/">ADMINISTRACIÓN DE LA CONFIGURACIÓN DE SOFTWARE</a>
+          <a class="tile" data-color="butter" href="procesos/modificaciones/">ADMINISTRACIÓN DE MODIFICACIONES Y PROBLEMAS</a>
+          <a class="tile" data-color="violet" href="procesos/riesgos/">GESTIÓN DE RIESGOS</a>
+        </div>
+      </div>
+
+      <div class="side right">Cierre del Proyecto:<br/>Necesidades del Cliente<br/>Satisfechas</div>
     </section>
   </div>
-
-  <script src="assets/js/app.js" defer></script>
 </body>
 </html>

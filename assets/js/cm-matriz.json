@@ -1,0 +1,160 @@
+{
+  "clausula": "IEC 62304 — 8.1 Administración de la Configuración",
+  "version": 1,
+  "fuente": "Matriz_Asistentes_8_1_x_por_Escenario.xlsx / hoja 1",
+  "escenarios": [
+    {
+      "nombre": "1) Inicio del proyecto (Sin IC, sin SOUP, sin LB)",
+      "subprocesos": {
+        "8.1.1": {
+          "titulo": "Listado de Ítems de Configuración",
+          "acciones": [
+            "Definir taxonomía de IC",
+            "Proponer versionado y nomenclatura",
+            "Generar semillas (repos/carpetas/plantillas)",
+            "Checklist “pronto para CM”"
+          ]
+        },
+        "8.1.2": {
+          "titulo": "Inventario de SOUP",
+          "acciones": [
+            "Definir proceso de alta de SOUP",
+            "Crear plantilla de registro (fabricante, designación, versión, evidencia)",
+            "Fijar criterios de aceptación/actualización y responsables"
+          ]
+        },
+        "8.1.3": {
+          "titulo": "LMC y Línea Base",
+          "acciones": [
+            "Establecer política de línea base (cuándo, quién, evidencia)",
+            "Crear vista LMC (consulta/página dinámica) lista para poblar",
+            "Emitir Acta LB‑0 (bootstrap)",
+            "Configurar CI para exportar LMC/Changelog al cerrar LB"
+          ]
+        }
+      },
+      "artefactos": [
+        "Política de LB (1 pág.)",
+        "Plantilla Inventario SOUP",
+        "Vista LMC vacía (consulta/página)",
+        "Acta LB‑0",
+        "Estructura repos/carpetas inicial",
+        "Registro de versiones (placeholder) + job de CI"
+      ]
+    },
+    {
+      "nombre": "2) Proyecto en curso (Sin Plan CM; hay código y docs; sin LB)",
+      "subprocesos": {
+        "8.1.1": {
+          "titulo": "Listado de Ítems de Configuración",
+          "acciones": [
+            "Descubrimiento inverso de IC desde repos/carpetas",
+            "Normalizar IDs y consolidar duplicados; marcar brechas",
+            "Proponer tags para primera LB y responsables por IC",
+            "Reporte de artefactos órfanos"
+          ]
+        },
+        "8.1.2": {
+          "titulo": "Inventario de SOUP",
+          "acciones": [
+            "Escaneo de manifiestos/lockfiles para detectar SOUP",
+            "Completar licencias, fuentes y versiones; vincular a IC",
+            "Reporte de SOUP faltantes o sin evidencia"
+          ]
+        },
+        "8.1.3": {
+          "titulo": "LMC y Línea Base",
+          "acciones": [
+            "Consolidar LMC (IC + SOUP) con evidencia (ruta/tag/commit)",
+            "Emitir Acta LB‑1 (fecha de corte, alcance, responsables)",
+            "Changelog automático entre commits/tags",
+            "Crear paquete LB‑1 (LMC exportada + acta + enlaces)"
+          ]
+        }
+      },
+      "artefactos": [
+        "LMC consolidada (TSV/CSV o consulta reproducible)",
+        "Acta LB‑1",
+        "Paquete /releases/LB‑1/ (LMC + acta + vínculos)",
+        "Changelog entre tags/commits",
+        "Reporte de brechas IC/SOUP",
+        "Lista de artefactos órfanos"
+      ]
+    },
+    {
+      "nombre": "3) Proyecto en curso (Sin Plan CM; algunas LB existentes)",
+      "subprocesos": {
+        "8.1.1": {
+          "titulo": "Listado de Ítems de Configuración",
+          "acciones": [
+            "Reconciliar histórico: IC por LB previa vs. estado actual",
+            "Identificar deprecaciones/renombrados de IC",
+            "Matriz IC ↔ LB (qué versión entra en cada LB)"
+          ]
+        },
+        "8.1.2": {
+          "titulo": "Inventario de SOUP",
+          "acciones": [
+            "Comparar SOUP por LB (versión usada en cada una)",
+            "Detectar actualizaciones no registradas de SOUP",
+            "Alertas: EOL/licencias faltantes o riesgos"
+          ]
+        },
+        "8.1.3": {
+          "titulo": "LMC y Línea Base",
+          "acciones": [
+            "Reconstruir LMC histórica (vistas por LB) + vista actual",
+            "Actas retrospectivas de LBs sin acta + Acta LB‑n actual",
+            "Delta report LB‑(n−1) → LB‑n",
+            "Actualizar timeline de LBs (registro de versiones)"
+          ]
+        }
+      },
+      "artefactos": [
+        "LMC histórica por LB + vista actual",
+        "Actas retrospectivas previas + Acta LB‑n",
+        "Delta report LB(n−1)→LB(n)",
+        "Timeline de LBs actualizado",
+        "Informe de integridad (inconsistencias y correcciones)"
+      ]
+    },
+    {
+      "nombre": "4) Proyecto heredado (legacy) – Releases en campo; evidencia dispersa",
+      "subprocesos": {
+        "8.1.1": {
+          "titulo": "Listado de Ítems de Configuración",
+          "acciones": [
+            "Extraer IC por release desde binarios/instaladores/repos",
+            "Unificar nombres/IDs entre ramas antiguas y actuales",
+            "Identificar componentes privados y su ubicación"
+          ]
+        },
+        "8.1.2": {
+          "titulo": "Inventario de SOUP",
+          "acciones": [
+            "Inferir SOUP por release (manifiestos, SBOM, notas técnicas)",
+            "Completar licencias/fuentes",
+            "Marcar riesgo (EOL/CVEs)"
+          ]
+        },
+        "8.1.3": {
+          "titulo": "LMC y Línea Base",
+          "acciones": [
+            "LMC reconstruida por release con evidencia (tag/commit/binario)",
+            "Actas retrospectivas por release + Acta de regularización",
+            "Paquetes por release (LMC + acta + enlaces) listos para auditoría",
+            "Changelog histórico reunificado entre releases"
+          ]
+        }
+      },
+      "artefactos": [
+        "LMC reconstruida por release",
+        "Actas retrospectivas + Acta de regularización",
+        "Paquetes de evidencia por release",
+        "Changelog histórico unificado",
+        "SBOM/manifiestos recuperados",
+        "Mapa IC/SOUP por release"
+      ]
+    }
+  ]
+}

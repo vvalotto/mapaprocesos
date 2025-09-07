@@ -1,0 +1,10 @@
+
+.cm-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+.cm-tab{padding:8px 12px;border:1px solid #e6e6e6;border-radius:10px;background:#fff;cursor:pointer}
+.cm-tab.active{box-shadow:0 6px 16px rgba(16,24,40,.08);font-weight:700}
+.cm-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cm-card{background:#fff;border:1px solid #e6e6e6;border-radius:12px;padding:14px}
+.cm-card h4{margin:0 0 8px 0}
+.cm-card ul{margin:0;padding-left:18px}
+.cm-note{color:#667085;font-size:14px;margin-top:10px}
+@media (max-width: 860px){.cm-grid{grid-template-columns:1fr}}
