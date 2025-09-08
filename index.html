@@ -8,13 +8,18 @@
 </head>
 <body>
   <div class="wrap">
-    <div class="top">
-      <div>
-        <div class="title">Área I+D+i / Software (SW): Marco de Procesos</div>
-        <div class="subtitle">Landing con navegación por procesos — multi‑página</div>
+    <header class="hero-section">
+      <div class="hero-content">
+        <div class="title-group">
+          <div class="breadcrumb">Área I+D+i / Software</div>
+          <h1 class="main-title">Marco de Procesos</h1>
+          <p class="subtitle">Sistema integrado de gestión de procesos — IEC 62304</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href="./">🏠 <span>Inicio</span></a>
+        </div>
       </div>
-      <a class="btn" href="./">🏠 <span>Landing</span></a>
-    </div>
+    </header>
 
     <section class="landing">
       <div class="side left">Necesidades<br/>del Cliente</div>
@@ -23,31 +28,100 @@
       <div class="section proj">
         <h3>Procesos de Proyecto</h3>
         <div class="band">
-          <a href="procesos/planificacion/">PLANIFICACIÓN Y CONTROL DE PROYECTOS</a>
+          <a class="process-link" href="procesos/planificacion/">
+            <div class="process-icon">📋</div>
+            <div class="process-content">
+              <h4>Planificación y Control de Proyectos</h4>
+              <p>Gestión integral del ciclo de vida del proyecto</p>
+            </div>
+          </a>
         </div>
       </div>
 
       <div class="section prod1">
         <h3>Procesos de Producto</h3>
         <div class="grid">
-          <a class="tile" data-color="orange" href="procesos/requerimientos/">DESARROLLO DE REQUERIMIENTOS</a>
-          <a class="tile" data-color="orange" href="procesos/solucion/">SOLUCIÓN TÉCNICA</a>
-          <a class="tile" data-color="orange" href="procesos/integracion/">INTEGRACIÓN DEL PRODUCTO</a>
+          <a class="tile enhanced" data-color="orange" href="procesos/requerimientos/">
+            <div class="tile-header">
+              <div class="tile-icon">📝</div>
+              <div class="tile-status pending"></div>
+            </div>
+            <div class="tile-content">
+              <h4>Desarrollo de Requerimientos</h4>
+              <p>Análisis y captura de necesidades del cliente</p>
+            </div>
+          </a>
+          <a class="tile enhanced" data-color="orange" href="procesos/solucion/">
+            <div class="tile-header">
+              <div class="tile-icon">⚙️</div>
+              <div class="tile-status pending"></div>
+            </div>
+            <div class="tile-content">
+              <h4>Solución Técnica</h4>
+              <p>Diseño e implementación de la arquitectura</p>
+            </div>
+          </a>
+          <a class="tile enhanced" data-color="orange" href="procesos/integracion/">
+            <div class="tile-header">
+              <div class="tile-icon">🔗</div>
+              <div class="tile-status pending"></div>
+            </div>
+            <div class="tile-content">
+              <h4>Integración del Producto</h4>
+              <p>Ensamblaje y pruebas de componentes</p>
+            </div>
+          </a>
         </div>
       </div>
 
       <div class="section prod2">
         <div class="grid">
-          <a class="tile vv" href="procesos/vv/">VERIFICACIÓN Y VALIDACIÓN</a>
+          <a class="tile enhanced vv" href="procesos/vv/">
+            <div class="tile-header">
+              <div class="tile-icon">✅</div>
+              <div class="tile-status pending"></div>
+            </div>
+            <div class="tile-content">
+              <h4>Verificación y Validación</h4>
+              <p>Pruebas de calidad y conformidad del producto</p>
+            </div>
+          </a>
         </div>
       </div>
 
       <div class="section supp1">
         <h3>Procesos de Soporte</h3>
         <div class="grid">
-          <a class="tile" data-color="pink" href="procesos/configuracion/">ADMINISTRACIÓN DE LA CONFIGURACIÓN DE SOFTWARE</a>
-          <a class="tile" data-color="butter" href="procesos/modificaciones/">ADMINISTRACIÓN DE MODIFICACIONES Y PROBLEMAS</a>
-          <a class="tile" data-color="violet" href="procesos/riesgos/">GESTIÓN DE RIESGOS</a>
+          <a class="tile enhanced" data-color="pink" href="procesos/configuracion/">
+            <div class="tile-header">
+              <div class="tile-icon">📦</div>
+              <div class="tile-status pending"></div>
+            </div>
+            <div class="tile-content">
+              <h4>Administración de la Configuración</h4>
+              <p>Control de versiones y gestión de cambios</p>
+            </div>
+          </a>
+          <a class="tile enhanced" data-color="butter" href="procesos/modificaciones/">
+            <div class="tile-header">
+              <div class="tile-icon">🔧</div>
+              <div class="tile-status completed">✓</div>
+            </div>
+            <div class="tile-content">
+              <h4>Gestión de Modificaciones</h4>
+              <p>Control de cambios y resolución de problemas</p>
+            </div>
+          </a>
+          <a class="tile enhanced" data-color="violet" href="procesos/riesgos/">
+            <div class="tile-header">
+              <div class="tile-icon">⚠️</div>
+              <div class="tile-status pending"></div>
+            </div>
+            <div class="tile-content">
+              <h4>Gestión de Riesgos</h4>
+              <p>Identificación y mitigación de riesgos</p>
+            </div>
+          </a>
         </div>
       </div>
 
