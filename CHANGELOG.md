@@ -7,6 +7,61 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2025-09-08
+
+### Modernización completa del sistema de diseño y UX
+
+### Agregado
+- **Hero sections modernos** con gradientes dinámicos y badges informativos
+  - Landing page: gradiente azul-púrpura con badge de certificación IEC 62304
+  - Configuración: gradiente rosa-magenta para diferenciación visual
+  - Estructura consistente: breadcrumb + título + subtitle + acciones
+- **Process tiles enhanced** con iconografía temática y status indicators
+  - Iconos específicos: 📝 Requerimientos, ⚙️ Solución, 🔗 Integración, etc.
+  - Indicadores de estado: ✓ completado (Gestión de Modificaciones), ○ pendiente
+  - Descripciones contextuales para cada proceso
+- **Cards interactivas premium** en página de configuración
+  - Header estructurado: icono temático + status de disponibilidad GPT
+  - Jerarquía visual clara: cláusula badge + título + acciones
+  - Footer adaptativo: botón GPT vs placeholder "en desarrollo"
+- **Tab navigation descriptivo** con contexto real en lugar de números genéricos
+  - Parsing inteligente de nombres de escenarios
+  - Layout jerárquico: número + descripción contextual
+
+### Mejorado
+- **Design system unificado** con componentes reutilizables
+  - Variables CSS centralizadas para colores, sombras y gradientes
+  - Hover effects consistentes con elevación y bordes dinámicos
+  - Transiciones suaves usando `cubic-bezier` para animaciones profesionales
+- **Responsive design mejorado** con breakpoints específicos para cada componente
+  - Desktop: tiles expandidos, padding generoso
+  - Mobile: layout vertical, componentes compactos
+  - Adaptación inteligente de iconografía y tipografía
+- **Interactividad avanzada** en todos los elementos
+  - Process tiles: elevación -4px con borders dinámicos en hover
+  - Cards CM: elevación -6px con sombras profundas
+  - GPT buttons: gradiente ChatGPT-style con efectos de presión
+- **Arquitectura CSS modular** con separación clara de responsabilidades
+  - `styles.css`: componentes base del sistema
+  - `cm-extra.css`: especializaciones para matriz de configuración
+  - Utilities responsive integradas
+
+### Corregido
+- **JSON syntax error** en `cm-matriz.json` corregido
+  - Eliminada coma trailing en array de acciones
+  - Completado elemento faltante "Marcar riesgo (EOL/CVEs)"
+  - Validación completa de estructura para los 4 escenarios
+- **Content updates** con lenguaje simplificado y más directo
+  - Títulos más específicos como "LMC y Línea Base (LB)"
+  - Acciones condensadas para mejor legibilidad
+  - Artefactos con nombres claros como "Linea Base Inicial"
+
+### Técnico
+- **+528 líneas agregadas, -241 líneas eliminadas** en 6 archivos
+- **Componentes CSS modernos**: enhanced tiles, hero sections, premium cards
+- **JavaScript mejorado** con renderizado estructurado header/content/footer
+- **Compatibilidad completa** con contenido existente y nueva funcionalidad
+
 ## [1.1.0] - 2025-09-07
 
 ### Mejoras significativas en UX y funcionalidad
