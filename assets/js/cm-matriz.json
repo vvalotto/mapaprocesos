@@ -9,10 +9,9 @@
         "8.1.1": {
           "titulo": "Listado de Ítems de Configuración",
           "acciones": [
-            "Definir taxonomía de IC",
+            "Definir Clasificación de Elementos de Configuración",
             "Proponer versionado y nomenclatura",
-            "Generar semillas (repos/carpetas/plantillas)",
-            "Checklist “pronto para CM”"
+            "Generar semillas (repos/carpetas/plantillas)"
           ]
         },
         "8.1.2": {
@@ -24,12 +23,11 @@
           ]
         },
         "8.1.3": {
-          "titulo": "LMC y Línea Base",
+          "titulo": "Linea Maestra de Configuración (LMC) y Línea Base (LB)",
           "acciones": [
             "Establecer política de línea base (cuándo, quién, evidencia)",
             "Crear vista LMC (consulta/página dinámica) lista para poblar",
-            "Emitir Acta LB‑0 (bootstrap)",
-            "Configurar CI para exportar LMC/Changelog al cerrar LB"
+            "Emitir LB Inicial"
           ]
         }
       },
@@ -37,9 +35,9 @@
         "Política de LB (1 pág.)",
         "Plantilla Inventario SOUP",
         "Vista LMC vacía (consulta/página)",
-        "Acta LB‑0",
+        "Linea Base Inicial",
         "Estructura repos/carpetas inicial",
-        "Registro de versiones (placeholder) + job de CI"
+        "Registro de versiones"
       ]
     },
     {
@@ -51,13 +49,13 @@
             "Descubrimiento inverso de IC desde repos/carpetas",
             "Normalizar IDs y consolidar duplicados; marcar brechas",
             "Proponer tags para primera LB y responsables por IC",
-            "Reporte de artefactos órfanos"
+            "Reporte de artefactos huérfanos"
           ]
         },
         "8.1.2": {
           "titulo": "Inventario de SOUP",
           "acciones": [
-            "Escaneo de manifiestos/lockfiles para detectar SOUP",
+            "Escaneo de manifiestos para detectar SOUP",
             "Completar licencias, fuentes y versiones; vincular a IC",
             "Reporte de SOUP faltantes o sin evidencia"
           ]
@@ -73,12 +71,12 @@
         }
       },
       "artefactos": [
-        "LMC consolidada (TSV/CSV o consulta reproducible)",
+        "LMC consolidada",
         "Acta LB‑1",
         "Paquete /releases/LB‑1/ (LMC + acta + vínculos)",
         "Changelog entre tags/commits",
         "Reporte de brechas IC/SOUP",
-        "Lista de artefactos órfanos"
+        "Lista de artefactos huérfanos"
       ]
     },
     {

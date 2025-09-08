@@ -28,7 +28,7 @@
 }
 
 .cm-tab {
-  padding: 12px 18px;
+  padding: 16px 20px;
   border: none;
   border-radius: 12px;
   background: white;
@@ -38,6 +38,24 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  text-align: center;
+  min-width: 200px;
+  flex: 1;
+}
+
+.tab-number {
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.7;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tab-title {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .cm-tab::before {
@@ -69,10 +87,20 @@
   color: white;
 }
 
+.cm-tab:hover .tab-number,
+.cm-tab:hover .tab-title {
+  color: white;
+}
+
 .cm-tab.active {
   transform: translateY(-1px);
   box-shadow: var(--cm-shadow-colored);
   font-weight: 700;
+  color: white;
+}
+
+.cm-tab.active .tab-number,
+.cm-tab.active .tab-title {
   color: white;
 }
 
@@ -140,120 +168,169 @@
 /* Cards con diseño premium */
 .cm-card {
   background: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 24px;
+  border: 2px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 0;
   position: relative;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-.cm-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--cm-primary);
-  transition: all 0.3s ease;
+.cm-card.enhanced {
+  border-color: transparent;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
 }
-
-.cm-card:nth-child(1)::before { background: var(--cm-primary); }
-.cm-card:nth-child(2)::before { background: var(--cm-secondary); }
-.cm-card:nth-child(3)::before { background: var(--cm-purple); }
 
 .cm-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
   border-color: var(--cm-primary);
 }
 
-.cm-card:hover::before {
-  height: 6px;
+/* Card Header */
+.cm-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.cm-card-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.cm-card-status {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cm-card-status.available {
+  background: #e8f5e8;
+  color: #2e7d32;
+}
+
+.cm-card-status.pending {
+  background: #fff3e0;
+  color: #f57c00;
+}
+
+/* Card Title */
+.cm-card-title {
+  padding: 0 24px 16px;
+}
+
+.cm-clause {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--cm-primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
 .cm-card h4 {
-  margin: 0 0 16px 0;
+  margin: 0;
   font-size: 18px;
   font-weight: 700;
   color: #1e293b;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  line-height: 1.3;
 }
 
-.cm-card h4::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--cm-primary);
-  flex-shrink: 0;
-}
-
-.cm-card:nth-child(1) h4::before { background: var(--cm-primary); }
-.cm-card:nth-child(2) h4::before { background: var(--cm-secondary); }
-.cm-card:nth-child(3) h4::before { background: var(--cm-purple); }
-
-.cm-card ul {
+/* Actions List */
+.cm-actions-list {
   margin: 0;
-  padding-left: 0;
+  padding: 0 24px;
   list-style: none;
+  flex: 1;
 }
 
-.cm-card li {
-  padding: 8px 0;
+.cm-actions-list li {
+  padding: 12px 0;
   border-bottom: 1px solid #f1f5f9;
   position: relative;
-  padding-left: 24px;
+  padding-left: 28px;
   color: #475569;
-  line-height: 1.6;
-}
-
-.cm-card li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  color: var(--cm-secondary);
-  font-weight: bold;
+  line-height: 1.5;
   font-size: 14px;
 }
 
-.cm-card li:last-child {
-  border-bottom: none;
+.cm-actions-list li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  color: var(--cm-primary);
+  font-weight: bold;
+  font-size: 12px;
+  opacity: 0.6;
 }
 
-.cm-card li:hover {
+.cm-actions-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 20px;
+}
+
+.cm-actions-list li:hover {
   color: var(--cm-primary);
-  background: #f8fafc;
-  margin: 0 -8px;
-  padding-left: 32px;
-  border-radius: 6px;
+  background: linear-gradient(90deg, #f8fafc 0%, transparent 100%);
+  margin: 0 -12px;
+  padding-left: 40px;
+  border-radius: 8px;
+}
+
+/* Card Footer */
+.cm-card-footer {
+  padding: 16px 24px 24px;
+  margin-top: auto;
+}
+
+.cm-placeholder {
+  text-align: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #d1d5db;
+}
+
+.cm-placeholder span {
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 500;
 }
 
 /* Botón GPT en las cards */
 .cm-gpt-button {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 16px;
-  margin-top: 16px;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
   background: linear-gradient(135deg, #10a37f 0%, #1a73e8 100%);
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 14px;
   font-weight: 600;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(16, 163, 127, 0.2);
 }
 
 .cm-gpt-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(16, 163, 127, 0.3);
+  box-shadow: 0 8px 25px rgba(16, 163, 127, 0.4);
   background: linear-gradient(135deg, #0d8f6f 0%, #1557b0 100%);
 }
 
@@ -291,9 +368,42 @@
 
 @media (max-width: 860px) {
   .cm-grid { grid-template-columns: 1fr; }
-  .cm-tabs { gap: 6px; }
-  .cm-tab { padding: 10px 14px; font-size: 14px; }
-  .cm-card { padding: 20px; }
+  .cm-tabs { 
+    gap: 8px; 
+    flex-direction: column;
+  }
+  .cm-tab { 
+    padding: 12px 16px; 
+    min-width: auto;
+    flex: none;
+  }
+  .tab-number {
+    font-size: 11px;
+    margin-bottom: 2px;
+  }
+  .tab-title {
+    font-size: 13px;
+  }
+  .cm-card-header {
+    padding: 16px 20px 12px;
+  }
+  .cm-card-icon {
+    font-size: 28px;
+  }
+  .cm-card-status {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+  .cm-card-title {
+    padding: 0 20px 12px;
+  }
+  .cm-actions-list {
+    padding: 0 20px;
+  }
+  .cm-card-footer {
+    padding: 12px 20px 20px;
+  }
   .cm-artefactos { padding: 20px; }
   .cm-artefactos-list { grid-template-columns: 1fr; }
 }
