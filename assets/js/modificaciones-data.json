@@ -1,0 +1,216 @@
+{
+  "titulo": "Gestión de Cambios IEC 62304",
+  "clausula": "IEC 62304 — Cláusula 8.2",
+  "version": 1,
+  "descripcion": "Sistema completo para el cumplimiento de la Cláusula 8.2",
+  "badge": "✓ Sistema Certificado IEC 62304:2006",
+  "features": {
+    "gpts": {
+      "count": 5,
+      "description": "Asistentes IA entrenados para cada fase del proceso"
+    },
+    "planillas": {
+      "count": 4,
+      "description": "Google Sheets conectadas para flujo completo"
+    },
+    "trazabilidad": {
+      "description": "Seguimiento completo del ciclo de vida"
+    }
+  },
+  "procesos": {
+    "solicitar": {
+      "id": "solicitar",
+      "clausula": "8.2.1",
+      "titulo": "Solicitar Cambio",
+      "descripcion": "Proceso inicial para registrar y documentar nuevas solicitudes de cambio en el sistema de software médico.",
+      "icon": "📝",
+      "color": "blue",
+      "gptLink": "https://chatgpt.com/g/g-689b898929f481919817804020bbafbc-gpt-8-2-1-solicitarcambio",
+      "planilla": "Generacion_Cambios_ProyectoX.xlsx",
+      "objetivos": [
+        "Documentar la necesidad del cambio de manera clara y completa",
+        "Identificar el motivo y justificación del cambio solicitado",
+        "Asignar prioridad según el impacto en el sistema",
+        "Establecer el solicitante y contexto del cambio"
+      ],
+      "proceso": [
+        "Identificar la necesidad del cambio en el software",
+        "Completar formulario de solicitud con todos los campos requeridos",
+        "Adjuntar documentación de soporte si es necesaria",
+        "Enviar solicitud para revisión y evaluación inicial"
+      ],
+      "entradas": [
+        "Necesidad identificada",
+        "Documentación de contexto",
+        "Justificación técnica"
+      ],
+      "salidas": [
+        "Solicitud registrada",
+        "ID único asignado",
+        "Estado inicial documentado"
+      ],
+      "campos": [
+        "ID único (UUID)",
+        "Descripción detallada",
+        "Fecha de solicitud",
+        "Motivo y justificación",
+        "Solicitante",
+        "Prioridad asignada"
+      ]
+    },
+    "aprobar": {
+      "id": "aprobar",
+      "clausula": "8.2.1",
+      "titulo": "Aprobar Cambio",
+      "descripcion": "Proceso de evaluación y toma de decisiones sobre las solicitudes de cambio registradas.",
+      "icon": "✅",
+      "color": "green",
+      "gptLink": "https://chatgpt.com/g/g-689b8b5e65108191b8525b76027ef8c5-gpt-8-2-1-aprobarcambio",
+      "planilla": "Generacion_Cambios_ProyectoX.xlsx",
+      "objetivos": [
+        "Evaluar el impacto técnico y de negocio del cambio",
+        "Verificar la viabilidad y recursos necesarios",
+        "Tomar decisión informada sobre la aprobación",
+        "Documentar la evaluación y decisión tomada"
+      ],
+      "proceso": [
+        "Revisar la solicitud de cambio recibida",
+        "Analizar impacto en el sistema y procesos existentes",
+        "Evaluar recursos necesarios y viabilidad técnica",
+        "Tomar decisión y documentar observaciones"
+      ],
+      "entradas": [
+        "Solicitud de cambio registrada",
+        "Análisis de impacto",
+        "Evaluación de recursos"
+      ],
+      "salidas": [
+        "Decisión documentada",
+        "Observaciones del evaluador",
+        "Estado actualizado"
+      ],
+      "campos": [
+        "Estado actualizado",
+        "Evaluador asignado",
+        "Fecha de revisión",
+        "Decisión final",
+        "Observaciones"
+      ]
+    },
+    "implementar": {
+      "id": "implementar",
+      "clausula": "8.2.2",
+      "titulo": "Implementar Cambio",
+      "descripcion": "Ejecución práctica de los cambios aprobados mediante la definición y asignación de tareas específicas.",
+      "icon": "⚙️",
+      "color": "purple",
+      "gptLink": "https://chatgpt.com/g/g-689dc9cf7aa481919156fc1a1dad533e-gpt-8-2-2-implementarcambio",
+      "planilla": "Implementación_Cambios_ProyectoX.xlsx",
+      "objetivos": [
+        "Descomponer el cambio en tareas ejecutables",
+        "Asignar responsables y cronogramas",
+        "Coordinar la implementación técnica",
+        "Documentar el progreso de implementación"
+      ],
+      "proceso": [
+        "Analizar el cambio aprobado y sus requerimientos",
+        "Crear plan de implementación con tareas específicas",
+        "Asignar recursos y responsables a cada tarea",
+        "Ejecutar las tareas según cronograma establecido"
+      ],
+      "entradas": [
+        "Cambio aprobado",
+        "Recursos disponibles",
+        "Cronograma del proyecto"
+      ],
+      "salidas": [
+        "Plan de implementación",
+        "Tareas asignadas",
+        "Cronograma de ejecución"
+      ],
+      "campos": [
+        "ID de cambio",
+        "Tareas específicas",
+        "Responsables",
+        "Fechas de ejecución",
+        "Estado de progreso"
+      ]
+    },
+    "verificar": {
+      "id": "verificar",
+      "clausula": "8.2.3",
+      "titulo": "Verificar Cambio",
+      "descripcion": "Validación y confirmación de que los cambios implementados cumplen con los requisitos establecidos.",
+      "icon": "👁️",
+      "color": "orange",
+      "gptLink": "https://chatgpt.com/g/g-689dd55b63108191a79d60e08536696b-gpt-8-2-3-verificarcambio",
+      "planilla": "Verificación_Cambios_ProyectoX.xlsx",
+      "objetivos": [
+        "Verificar cumplimiento de especificaciones",
+        "Validar funcionalidad implementada",
+        "Documentar evidencias de conformidad",
+        "Confirmar calidad del cambio realizado"
+      ],
+      "proceso": [
+        "Revisar las tareas implementadas",
+        "Ejecutar pruebas de verificación correspondientes",
+        "Documentar evidencias y resultados obtenidos",
+        "Confirmar conformidad con requisitos originales"
+      ],
+      "entradas": [
+        "Tareas implementadas",
+        "Criterios de verificación",
+        "Plan de pruebas"
+      ],
+      "salidas": [
+        "Evidencias de verificación",
+        "Reporte de conformidad",
+        "Estado de verificación"
+      ],
+      "campos": [
+        "ID de cambio",
+        "Criterios verificados",
+        "Evidencias documentadas",
+        "Resultado de verificación"
+      ]
+    },
+    "trazabilidad": {
+      "id": "trazabilidad",
+      "clausula": "8.2.4",
+      "titulo": "Gestionar Trazabilidad",
+      "descripcion": "Mantenimiento del registro completo del ciclo de vida del cambio para asegurar trazabilidad total.",
+      "icon": "📊",
+      "color": "red",
+      "gptLink": "https://chatgpt.com/g/g-689f2f9e505c8191b87126577d9ef1c4-gpt-8-2-4-trazabilidadcambio",
+      "planilla": "Trazabilidad_Cambios_ProyectoX.xlsx",
+      "objetivos": [
+        "Consolidar información de todo el ciclo de vida",
+        "Mantener relaciones entre solicitud, implementación y verificación",
+        "Asegurar trazabilidad completa para auditorías",
+        "Generar reportes de seguimiento del cambio"
+      ],
+      "proceso": [
+        "Recopilar información de todas las fases anteriores",
+        "Establecer relaciones y dependencias documentadas",
+        "Consolidar registro histórico completo",
+        "Generar reportes de trazabilidad para revisión"
+      ],
+      "entradas": [
+        "Datos de generación",
+        "Datos de implementación",
+        "Datos de verificación"
+      ],
+      "salidas": [
+        "Registro consolidado",
+        "Matriz de trazabilidad",
+        "Reporte de ciclo completo"
+      ],
+      "campos": [
+        "ID de cambio",
+        "Enlaces entre fases",
+        "Historial completo",
+        "Métricas de seguimiento"
+      ]
+    }
+  }
+}

@@ -7,6 +7,63 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+## [1.3.0] - 2025-09-11
+
+### Sistema modular de Gestión de Modificaciones y estandarización arquitectónica
+
+### Agregado
+- **Sistema completo de Gestión de Modificaciones IEC 62304**
+  - SPA modular con 5 procesos especializados (8.2.1 Solicitar, Aprobar, 8.2.2 Implementar, 8.2.3 Verificar, 8.2.4 Trazabilidad)
+  - Enlaces directos a GPTs especializados de ChatGPT para cada proceso
+  - Integración completa con planillas Excel específicas por proceso
+  - Navegación dinámica entre procesos con información detallada
+- **Estado de progreso 'partial'** para tiles de procesos
+  - Nuevo estado visual (círculo naranja ⚠️) para procesos parcialmente implementados
+  - Estado aplicado a "Administración de la Configuración" 
+  - CSS: `.tile-status.partial` con color #f59e0b
+- **Arquitectura modular estandarizada** para todos los procesos
+  - Patrón de nomenclatura: `{proceso}-index.html`, `{proceso}-data.json`, `{proceso}-styles.css`, `{proceso}-logic.js`
+  - Archivos centralizados en carpetas `/assets/css/` y `/assets/js/`
+  - Sistema reutilizable para futuros procesos
+
+### Mejorado
+- **Consistencia visual** con sistema de diseño unificado
+  - Cards de Gestión de Modificaciones usando estructura `tile` base
+  - Hover effects idénticos a landing page (`translateY(-4px)`, `border-color: var(--brand)`)
+  - Color system unificado con `data-color` attributes
+  - Tipografías y espaciados estandarizados
+- **Navegación optimizada** desde landing page
+  - Enlace directo a `modificaciones-index.html` desde tile principal
+  - Eliminación de página intermedia para mejor UX
+  - Botones de retorno consistentes en toda la aplicación
+
+### Estructural
+- **Archivos reorganizados**:
+  - `modificaciones-data.json` → `/assets/js/`
+  - `modificaciones-logic.js` → `/assets/js/` 
+  - `modificaciones-styles.css` → `/assets/css/`
+  - `gestion-cambios.html` → `modificaciones-index.html`
+- **Datos estructurados** en JSON con información completa:
+  - Objetivos, procesos, entradas/salidas por cada actividad
+  - Metadatos de GPTs y planillas asociadas
+  - Información para renderizado dinámico
+
+### Técnico
+- **SPA JavaScript modular** con funciones especializadas:
+  - `loadGestionCambios()`: Carga asíncrona de datos JSON
+  - `renderActionsGrid()`: Generación dinámica de cards
+  - `showPage()`: Navegación SPA con gestión de estados
+  - `renderDetailPage()`: Renderizado dinámico de contenido detallado
+- **CSS modular** extendiendo sistema base:
+  - Variables específicas `--gm-*` manteniendo coherencia
+  - Reutilización de componentes `.tile`, `.hero-section`, `.btn`
+  - Responsive design heredado del sistema principal
+
+### Preparación para despliegue
+- **Estructura lista para GitHub Pages**
+- **Documentación completa** en CHANGELOG para seguimiento de cambios
+- **Patrón arquitectónico** establecido para escalabilidad futura
+
 ## [1.2.0] - 2025-09-08
 
 ### Modernización completa del sistema de diseño y UX
