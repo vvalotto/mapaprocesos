@@ -7,6 +7,38 @@ y este proyecto adhiere a [Versionado Semántico](https://semver.org/lang/es/).
 
 ## [Unreleased]
 
+### Mejoras de UX y diseño visual actualizado
+
+### Cambiado
+- **Diseño de Gestión de Modificaciones**: Cards apiladas → Líneas horizontales apiladas
+  - Layout más compacto y eficiente en espacio
+  - Indicadores de color lateral (4px → 6px en hover) por proceso
+  - Botones GPT integrados directamente en cada línea
+  - Responsive design mejorado: desktop horizontal → mobile vertical
+- **Nomenclatura de navegación**: "Landing" → "Inicio" en toda la aplicación
+  - Actualizado en títulos de página y botones de navegación
+  - Consistencia en lenguaje más natural en español
+
+### Mejorado
+- **Interfaz de Gestión de Modificaciones**:
+  - Estructura lineal: Icono + Badge cláusula + Contenido + Botón GPT
+  - Hover effects refinados: `translateY(-2px)` + sombra suave
+  - Click inteligente: línea completa navegable excepto botón GPT
+  - Colores diferenciados por proceso (azul, púrpura, naranja, rojo)
+- **Hero section simplificada** en página principal
+  - Eliminado botón redundante "Inicio" de la página de inicio
+  - Enfoque en contenido principal sin elementos distractores
+
+### Técnico
+- **CSS modular actualizado**:
+  - Nueva clase `.gm-actions-list` para layout vertical
+  - Clase `.gm-action-line` para líneas individuales de proceso
+  - Responsive breakpoints optimizados para layout lineal
+- **JavaScript optimizado**:
+  - Función `renderActionsGrid()` actualizada para líneas
+  - Event handling mejorado con `stopPropagation()` para botones anidados
+  - Estructura HTML más semántica y accesible
+
 ## [1.3.0] - 2025-09-11
 
 ### Sistema modular de Gestión de Modificaciones y estandarización arquitectónica

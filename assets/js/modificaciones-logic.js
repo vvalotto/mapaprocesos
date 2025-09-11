@@ -59,35 +59,38 @@ function renderHomePage() {
   renderFeaturesSection();
 }
 
-// Renderizar grid de acciones principales
+// Renderizar lista de acciones como líneas apiladas
 function renderActionsGrid() {
-  const grid = $('.gm-actions-grid');
-  if (!grid) return;
+  const list = $('.gm-actions-list');
+  if (!list) return;
   
-  grid.innerHTML = '';
+  list.innerHTML = '';
   
   Object.values(gmData.procesos).forEach(proceso => {
-    const card = document.createElement('div');
-    card.className = 'gm-action-card';
-    card.setAttribute('data-color', proceso.color);
-    card.onclick = () => showPage(proceso.id);
+    const line = document.createElement('div');
+    line.className = 'gm-action-line';
+    line.setAttribute('data-color', proceso.color);
     
-    card.innerHTML = `
-      <div class="gm-action-header">
-        <div class="gm-action-icon">${proceso.icon}</div>
-        <div class="gm-clause-badge">Cláusula ${proceso.clausula}</div>
-      </div>
+    line.innerHTML = `
+      <div class="gm-action-icon">${proceso.icon}</div>
+      <div class="gm-clause-badge">${proceso.clausula}</div>
       <div class="gm-action-content">
         <h4 class="gm-action-title">${proceso.titulo}</h4>
         <p class="gm-action-description">${proceso.descripcion}</p>
       </div>
-      <div class="gm-action-footer">
-        <span>Ir a detalles</span>
-        <span>→</span>
-      </div>
+      <a href="${proceso.gptLink}" target="_blank" class="gm-action-gpt" onclick="event.stopPropagation()">
+        🤖 GPT Especializado
+      </a>
     `;
     
-    grid.appendChild(card);
+    // Click en la línea (excluyendo el botón GPT) va al detalle
+    line.onclick = (event) => {
+      if (!event.target.closest('.gm-action-gpt')) {
+        showPage(proceso.id);
+      }
+    };
+    
+    list.appendChild(line);
   });
 }
 
